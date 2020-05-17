@@ -1,0 +1,5 @@
+de:
+  events:
+    global:
+      link:
+        add_event/campaign: Kampagne erstellen

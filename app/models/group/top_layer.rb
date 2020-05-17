@@ -8,7 +8,7 @@
 class Group::TopLayer < Group
 
   self.layer = true
-  self.event_types = [Event, Event::Course]
+  self.event_types = [Event, Event::Course, Event::Campaign]
   self.default_children = [Group::TopLayerBoard,
                            Group::TopLayerOffice,
                            Group::TopLayerContacts,

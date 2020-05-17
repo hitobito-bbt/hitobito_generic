@@ -6,5 +6,14 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 Rails.application.routes.draw do
-  
+  extend LanguageRouteScope
+  language_scope do
+    resources :groups do
+      resources :events, only: [] do # do not redefine events actions, only add new ones
+        collection do
+          get 'campaign' => 'events#index', type: 'Event::Campaign'
+        end
+      end
+    end
+  end
 end

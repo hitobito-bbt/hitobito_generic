@@ -33,6 +33,17 @@ de:
       group/local/main_leader: Hauptleitung
       group/local/address_manager: Adressverwaltung
 
+      event/campaign/role/leader:
+        one: Kampagnenleitung
+        other: Kampagnenleitungen
+
+      event/campaign/role/assistant_leader:
+        one: Leitung
+        other: Leitungen
+
+      event/campaign/role/helper:
+        one: Helfer/-in
+        other: Helfer/-innen
 
       role/address_manager: Adressverwaltung
       role/contact: Kontakt
@@ -48,6 +59,10 @@ de:
       role/board_secretary: Sekretär(in)
       role/board_member: Vorstandsmitglied
       role/treasurer: Kassier
+
+      event/campaign:
+        one: Kampagne
+        other: Kampagnen
 
     attributes:
       person:

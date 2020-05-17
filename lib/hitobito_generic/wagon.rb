@@ -19,8 +19,18 @@ module HitobitoGeneric
       # extend application classes here
       Group.send  :include, Group::Generic
       Person.send :include, Generic::Person
+      GroupAbility.send :include, Generic::GroupAbility
 
       PeopleController.send :include, Generic::PeopleController
+
+      Sheet::Group.tabs.insert 4,
+        Sheet::Tab.new('activerecord.models.event/campaign.other',
+                       :campaign_group_events_path,
+                       params: { returning: true },
+                       if: (lambda do |view, group|
+                         group.event_types.include?(::Event) && view.can?(:index_events, group)
+                         true
+                       end))
     end
 
     initializer 'hitobito_generic.add_settings' do |_app|
