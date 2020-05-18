@@ -4,13 +4,18 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 application:
+  name: CVP
   # The languages available in the menu
   languages:
     de: Deutsch
-    en: English
     fr: Français
+    en: English
   footer:
     links:
       "Forum": https://hitobito.discoursehosting.net/
       "Dokumentation": https://hitobito.readthedocs.io
       "E-Mail an Support": 'mailto:support@hitobito.com'
+pwa:
+  short_name: CVP
+  theme_color: "#EF7D00"
+  icon_sizes: [192, 512]
