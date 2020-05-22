@@ -64,7 +64,15 @@ de:
         one: Kampagne
         other: Kampagnen
 
+      donation:
+        one: Spende
+        other: Spenden
+
     attributes:
+      donation:
+        amount: Betrag
+        description: Beschreibung
+        issued_at: Datum
       person:
         additional_languages: weitere Sprachen
         advertising: Werbung

@@ -7,4 +7,3 @@ module Generic::GroupAbility
     end
   end
 end
-

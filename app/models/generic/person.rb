@@ -19,5 +19,7 @@ module Generic::Person
 
     i18n_enum :advertising, ADVERTISINGS
     i18n_setter :advertising, ADVERTISINGS
+
+    has_many :donations, dependent: :destroy
   end
 end

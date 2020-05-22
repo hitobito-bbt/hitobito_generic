@@ -21,6 +21,9 @@ module HitobitoGeneric
       Person.send :include, Generic::Person
       GroupAbility.send :include, Generic::GroupAbility
 
+      Ability.store.register DonationAbility
+
+
       PeopleController.send :include, Generic::PeopleController
 
       Sheet::Group.tabs.insert 4,
@@ -29,7 +32,14 @@ module HitobitoGeneric
                        params: { returning: true },
                        if: (lambda do |view, group|
                          group.event_types.include?(::Event) && view.can?(:index_events, group)
-                         true
+                       end))
+
+      Sheet::Person.tabs.insert 5,
+        Sheet::Tab.new('activerecord.models.donation.other',
+                       :group_person_donations_path,
+                       params: { returning: true },
+                       if: (lambda do |view, group, person|
+                         view.can?(:manage, person.donations.build)
                        end))
     end
 

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   extend LanguageRouteScope
   language_scope do
     resources :groups do
+      resources :people, only: [] do
+        scope module: :person do
+          resources :donations
+        end
+      end
       resources :events, only: [] do # do not redefine events actions, only add new ones
         collection do
           get 'campaign' => 'events#index', type: 'Event::Campaign'

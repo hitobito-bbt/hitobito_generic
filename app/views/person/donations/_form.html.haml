@@ -1,0 +1,7 @@
+= entry_form html: { class: 'form-striped' }, buttons_top: false do |f|
+  - if entry.new_record?
+    = f.hidden_field :person_id
+
+  = f.labeled_text_area :description
+  = f.labeled_input_fields :amount
+  = f.labeled_date_field :issued_at
